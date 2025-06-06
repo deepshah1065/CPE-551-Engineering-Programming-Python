@@ -25,33 +25,27 @@ def find_maximum(numbers):
     return maximumnumber        
 ```
 
-QUESTION 2: 
-========================================================================================================
-Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
-Write a function named generateParenthesis that takes an integer as an input and returns a list of strings 
-as an output. Note that you can define a function inside a function if necessary.
+## Question 2 
+### Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses. Write a function named generateParenthesis that takes an integer as an input and returns a list of strings as an output. Note that you can define a function inside a function if necessary.
 
-Example 1:
-========================================
-Input: 0
-Output: ['']
+### Example 1:
+### Input: 0
+### Output: ['']
 
-Example 2:
-========================================
-Input: 1
-Output: ['()']
+### Example 2:
+### Input: 1
+### Output: ['()']
 
-Example 3:
-========================================
-Input: 2
-Output: ['(())', '()()']
+### Example 3:
+### Input: 2
+### Output: ['(())', '()()']
 
-Example 4:
-========================================
-Input: 3
-Output: ['((()))', '(()())', '(())()', '()(())', '()()()'])
-"""
+### Example 4:
+### Input: 3
+### Output: ['((()))', '(()())', '(())()', '()(())', '()()()'])
 
+## Code
+```{python}
 def generateParenthesis(n):
     def generate(p, left, right, parenthesis): #setting parameters for the generate function 
         if left == 0 and right == 0:
@@ -65,40 +59,32 @@ def generateParenthesis(n):
     result = []
     generate("", n, n, result)
     return result
+```
 
 
-"""
-QUESTION 3: 
-========================================================================================================
-Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
-Note: For the purpose of this problem, we define empty string as valid palindrome. Write a function
-named isPalindrome that takes a string as an input and returns a bool as an output.
+## Question 3 
+### Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases. Note: For the purpose of this problem, we define empty string as valid palindrome. Write a function named isPalindrome that takes a string as an input and returns a bool as an output.
 
-Hint: refer to the following example on how to reverse a string.
+### Hint: refer to the following example on how to reverse a string.
+### >>> S = "abc"
+### >>> S[::-1]
+### 'cba'
 
->>> S = "abc"
->>> S[::-1]
-'cba'
+### Example 1:
+### Input: "A man, a plan, a canal: Panama"
+### Output: true
 
-Example 1:
-========================================
-Input: "A man, a plan, a canal: Panama"
-Output: true
+### Explanation:
+### After removing non-alphanumeric charactors and ignoring cases, the input is: amanaplanacanalPanama which reads the same as backward and forward, so it is true.
 
-Explanation:
-After removing non-alphanumeric charactors and ignoring cases, the input is:  amanaplanacanalPanama
-which reads the same as backward and forward, so it is true.
+### Example 2:
+### Input: "race a car"
+### Output: false
 
-Example 2:
-=========================================
-Input: "race a car"
-Output: false
+### Explanation:
+### After removing non-alphanumeric charactors and ignoring cases, the input is: raceacar which does not read the same as backward and forward, so it is false.
 
-Explanation:
-After removing non-alphanumeric charactors and ignoring cases, the input is:  raceacar
-which does not read the same as backward and forward, so it is false.
-"""
-
+```{python}
 def isPalindrome(x):
     filter_text = ''.join(char.lower() for char in x if char.isalnum()) #This filters the word to remove the non-alphanumeric charactors and ignoring cases as shown below. This also makes the characters lower case. 
     #To remove the non-alphanumeric charactors and ignoring cases, you can use use the code: 
