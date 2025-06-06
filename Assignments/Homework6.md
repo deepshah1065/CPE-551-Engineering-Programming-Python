@@ -83,3 +83,36 @@ def largestGoodInteger(Num):
         return ""
     return ans
 ```
+
+## Question 4
+### Given an integer array nums of length n, please return the number closest to 0 in nums. If there are multiple answers, please return the maximum value among them.
+
+### Example 1:
+### Input: [-4,-2,1,4,8]
+### Output: 1
+### Explanation: 
+### The distance from -4 to 0 is |-4| = 4 .
+### The distance from -2 to 0 is |-2| = 2 .
+### The distance from 1 to 0 is |1| = 1 .
+### The distance from 4 to 0 is |4| = 4 .
+### The distance from 8 to 0 is |8| = 8 .
+### So, the closest number to 0 in the array is 1 .
+
+### Example 2:
+### Input: [2,-1,1]
+### Output: 1
+### Explanation: Both 1 and -1 are the closest numbers to 0, so the larger value 1 is returned.
+
+```{python}
+def findClosestNumber(nums):
+    if not nums:
+        return None   
+    ans = nums[0]
+    for num in nums:
+        if abs (num) < abs (ans):
+            ans = num #Update the closest value to be the current value (ans)
+        elif abs(num) == abs(ans) and num > ans:
+            ans = num # Update if numbers are equally close, pick the larger one
+
+    return ans
+```
