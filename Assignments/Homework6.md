@@ -50,35 +50,36 @@ def reduce_function(lst):
 ```
 
 ## Question 3 
-### Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases. Note: For the purpose of this problem, we define empty string as valid palindrome. Write a function named isPalindrome that takes a string as an input and returns a bool as an output.
-
-### Hint: refer to the following example on how to reverse a string.
-### Code
-```{python}
->>> S = "abc"
->>> S[::-1]
-```
-### Output
-### 'cba'
+### Give a string number as Num, representing a larger number. An integer is considered a great integer if it satisfies all of the following conditions:
+### 1.The integer is a substring of length 4 of Num.
+### 2.The integer consists of a unique number repeated 4 times.
+### Returns the largest great integer as a string. Returns an empty string "" if no such integer exists.
 
 ### Example 1:
-### Input: "A man, a plan, a canal: Panama"
-### Output: true
-
-### Explanation:
-### After removing non-alphanumeric charactors and ignoring cases, the input is: amanaplanacanalPanama which reads the same as backward and forward, so it is true.
+### Input: "8999921111116"
+### Output: "9999"
+### Explanation: There are two great integers in Num: "9999" and "1111". "9999" is the largest one.
 
 ### Example 2:
-### Input: "race a car"
-### Output: false
+### Input:"6498888132"
+### Output: "8888"
+### Explanation: "8888" is the only great integer.
 
-### Explanation:
-### After removing non-alphanumeric charactors and ignoring cases, the input is: raceacar which does not read the same as backward and forward, so it is false.
+### Example 3:
+### Input: "89454648126"
+### Output: ""
+### Explanation: There is no integer of length 4 consisting of only one unique digit. Therefore, great integers do not exist.
 
 ```{python}
-def isPalindrome(x):
-    filter_text = ''.join(char.lower() for char in x if char.isalnum()) #This filters the word to remove the non-alphanumeric charactors and ignoring cases as shown below. This also makes the characters lower case. 
-    #To remove the non-alphanumeric charactors and ignoring cases, you can use use the code: 
-    # clean_text = ''.join(char for char in text if char.isalnum())
-    return filter_text == filter_text[::-1] #This will output whether this is true, resulting in a palindrome and false for which does not read the same as backward and forward
+def largestGoodInteger(Num):
+    ans = "" #ans would be represented as largest great integer
+    
+    for i in range(len(Num) - 3): #len(Num) - 3: We subtract 3 to make sure we stop at the last valid starting index for a 4-character substring.
+        substring = Num[i: i + 4] #This creates a substring that slices from [i, i+1], determing character that have a length of 4.
+        if substring [0] == substring [1] == substring [2] == substring[3]:
+            if substring > ans:
+                ans = substring #ans is updating its value with the larger string
+    if ans == "": #This is just returning an empty string for when you have an empty string 
+        return ""
+    return ans
 ```
