@@ -1,4 +1,4 @@
-# <p align="center"><ins> Homework 5 </ins></p>
+<p align="center"><ins> Homework 5 </ins></p>
 ## Code
 ### Question 1
 #### Given a list of numbers, write a function to find the maximum number in the list. Do Not Use the built-in Python function max. Note: For the purpose of this problem, we define that an empty list will return None. NOTE: DO NOT USE THE PYTHON FUNCTION max. WRITE your program using a loop. 
