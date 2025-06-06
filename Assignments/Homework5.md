@@ -8,7 +8,7 @@
 ### Output: 25
 
 ### Example 2:
-### Input:[10,10,10]
+### Input: [10,10,10]
 ### Output: 10
 
 ### Example 3:
@@ -63,13 +63,16 @@ def generateParenthesis(n):
     return result
 ```
 
-
 ## Question 3 
 ### Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases. Note: For the purpose of this problem, we define empty string as valid palindrome. Write a function named isPalindrome that takes a string as an input and returns a bool as an output.
 
 ### Hint: refer to the following example on how to reverse a string.
-### >>> S = "abc"
-### >>> S[::-1]
+### Code
+```{python}
+>>> S = "abc"
+>>> S[::-1]
+```
+### Output
 ### 'cba'
 
 ### Example 1:
