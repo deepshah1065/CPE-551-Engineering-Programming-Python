@@ -1,122 +1,109 @@
-# <p align="center"><ins> Homework 3 </ins></p>
+# <p align="center"><ins> Homework 5 </ins></p>
 ## **<ins> Code </ins>**
-```{python}
-#I pledge my honor that I have abided by the Stevens Honors System. - Deep Shah
-import math
+### QUESTION 1
+#### Given a list of numbers, write a function to find the maximum number in the list. Do Not Use the built-in Python function max. Note: For the purpose of this problem, we define that an empty list will return None. NOTE: DO NOT USE THE PYTHON FUNCTION max. WRITE your program using a loop. 
+#### Example 1:
+#### Input: [10, 5, 20, 15, 25]
+#### Output: 25
 
-def calculate():
-    a=3
-    b=4
+#### Example 2:
+#### Input:[10,10,10]
+#### Output: 10
 
-    # Add a and b then assign the sum to variable c
-    c = a + b
-    print(c)
-
-    # Subtract c by 1 then divide this result by 5.0 and assign this final result to the variable q
-    q = (c - 1)/5.0
-    print (q)
+#### Example 3:
+#### Input: []
+#### Output: None
 
 
 
-    # Assign the type of the variable q to a new variable type_q
-    type_q = type(q)
-    print (type_q)
+def find_maximum(numbers):
+    if not numbers:
+        return None
+    maximumnumber = numbers[0] #This sets maximumnumber to first number of a list
+    for i in numbers: 
+        if i > maximumnumber:
+            maximumnumber = i #This updates maximumnumber if i is greater than maximumnumber
+    return maximumnumber
+        
 
-    return c,q,type_q
+"""
+QUESTION 2: 
+========================================================================================================
+Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
+Write a function named generateParenthesis that takes an integer as an input and returns a list of strings 
+as an output. Note that you can define a function inside a function if necessary.
 
+Example 1:
+========================================
+Input: 0
+Output: ['']
 
-def string_formating():
+Example 2:
+========================================
+Input: 1
+Output: ['()']
 
-    math_pi = 3.141592653589793
+Example 3:
+========================================
+Input: 2
+Output: ['(())', '()()']
 
-    # Format the variable math_pi as a string with 6 decimal places and assign it to variable string_pi
-    math_pi = 3.141592653589793
-    string_pi = "{:.6f}".format(math_pi) #The f indicates that you're formatting a floating-point number. The .6 specifies the number of decimal places to display. 
-    #So :.6f means "format the number as a float with 6 digits after the decimal point."
+Example 4:
+========================================
+Input: 3
+Output: ['((()))', '(()())', '(())()', '()(())', '()()()'])
+"""
 
-    print (string_pi)
-
-    ####
-    large_number= 100000000
-
-    # Format large_number to be a string and assign it to the variable comma_string. The contents of comma_string
-    # should have the appropriate commas. (Comma separator). Example; 1000 should be "1,000"
-    large_number = 100000000
-    comma_string = "{:,}".format(large_number) #This code is used to format the large number with commas; notes you need to indicate the {:,} for commas
-    print (comma_string)
-
-    # Format large_number to be a string and assign it to the variable exp_string. The contents of exp_string
-    # should be exponent notation (with two decimal places).
-    large_number = 100000000
-    exp_string = "{:.2e}".format(large_number) #This code does the exp_string operation, where it makes the number in exponentation notation like 1.00e+8. 
-    #{:.2e}: This is used to indicate that it should be two decimal places and e represents the exponentation notation. The colon inside the curly braces indicates that a format specification follows
-    print (exp_string)
-
-    ####
-    small_number =13
-
-    # Format small_number to be a string and assign it to the variable center_string. 
-    # The format for center_string should be Center aligned with a width of 10.
-    small_number = 13
-    center_string = "{: ^10}".format(small_number) #When you place ^ in the format specification, it tells Python to center-align the content within the specified width.
-    print (center_string) 
-
-    # Format small_number to be a string and assign it to the variable left_string.
-    # The format for left_string should be Left aligned with a width of 10.
-    left_string = "{: <10}".format(small_number)
-    print (left_string)
-
-    return string_pi,comma_string,exp_string,center_string,left_string
-
-
-def build_in():
-    #### Use the math library for the following questions.
-    # Assign the number pi to the variable math_pi
-    math_pi = math.pi
-    print(math_pi)
-
-    # Assign the Euler's number (e) to the variable math_e
-    math_e = math.e
-    print(math_e)
-
-    # Assign the sine of pi (sin(pi)) to the variable sin_pi
-    sin_pi = math.sin(math.pi)
-    print (sin_pi)
-
-    # Assign the square root of 2 to the variable square_root_2
-    square_root_2 = math.sqrt(2)
-    print (square_root_2)
-
-    # Assign the absolute value of -2 to the variable abs_2
-    # (Please use the built-in Python function for absolute value)
-    abs_2 = abs(-2)
-    print(abs_2)
-
-    return math_pi,math_e,sin_pi,square_root_2,abs_2
+def generateParenthesis(n):
+    def generate(p, left, right, parenthesis): #setting parameters for the generate function 
+        if left == 0 and right == 0:
+            parenthesis.append(p) 
+            return
+        if left > 0:
+            generate(p + "(", left - 1, right, parenthesis)
+        if right > left:
+            generate(p + ")", left, right - 1, parenthesis)
+        
+    result = []
+    generate("", n, n, result)
+    return result
 
 
+"""
+QUESTION 3: 
+========================================================================================================
+Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
+Note: For the purpose of this problem, we define empty string as valid palindrome. Write a function
+named isPalindrome that takes a string as an input and returns a bool as an output.
 
-def set_op():
-    S1 = {1, 2, 3, 4}
-    S2 = {3, 4, 5, 6}
+Hint: refer to the following example on how to reverse a string.
 
-    # Add 0 to set S1
-    S1.add((0))
-    print (S1)
+>>> S = "abc"
+>>> S[::-1]
+'cba'
 
-    # Assign the union of S1 and S2 to the variable union_s
-    union_s = S1 | S2
-    print (union_s)
+Example 1:
+========================================
+Input: "A man, a plan, a canal: Panama"
+Output: true
 
-    # Assign the sum of all items in union_s to the variable sum_s
-    sum_s = sum((union_s))
-    print (sum_s)
+Explanation:
+After removing non-alphanumeric charactors and ignoring cases, the input is:  amanaplanacanalPanama
+which reads the same as backward and forward, so it is true.
 
-    return S1,union_s,sum_s
+Example 2:
+=========================================
+Input: "race a car"
+Output: false
 
+Explanation:
+After removing non-alphanumeric charactors and ignoring cases, the input is:  raceacar
+which does not read the same as backward and forward, so it is false.
+"""
 
-calculate()
-string_formating()
-build_in()
-set_op()
+def isPalindrome(x):
+    filter_text = ''.join(char.lower() for char in x if char.isalnum()) #This filters the word to remove the non-alphanumeric charactors and ignoring cases as shown below. This also makes the characters lower case. 
+    #To remove the non-alphanumeric charactors and ignoring cases, you can use use the code: 
+    # clean_text = ''.join(char for char in text if char.isalnum())
+    return filter_text == filter_text[::-1] #This will output whether this is true, resulting in a palindrome and false for which does not read the same as backward and forward
 ```
