@@ -13,8 +13,8 @@
 #### Input: []
 #### Output: None
 
-
-
+### Code
+```{python}
 def find_maximum(numbers):
     if not numbers:
         return None
@@ -22,10 +22,9 @@ def find_maximum(numbers):
     for i in numbers: 
         if i > maximumnumber:
             maximumnumber = i #This updates maximumnumber if i is greater than maximumnumber
-    return maximumnumber
-        
+    return maximumnumber        
+```
 
-"""
 QUESTION 2: 
 ========================================================================================================
 Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
