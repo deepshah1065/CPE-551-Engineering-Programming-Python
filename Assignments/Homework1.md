@@ -2,9 +2,7 @@
 ## **<ins> Code </ins>**
 ```{python}
 
-"""
-Python Core object Types
-"""
+""" Python Core Object Types"""
 
 def number():
     """This is to review numbers and basic operations."""
