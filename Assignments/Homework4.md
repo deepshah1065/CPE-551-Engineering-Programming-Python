@@ -1,122 +1,114 @@
 # <p align="center"><ins> Homework 4 </ins></p>
 ## **<ins> Code </ins>**
 ```{python}
-#I pledge my honor that I have abided by the Stevens Honors System. - Deep Shah
-import math
+import copy
 
-def calculate():
-    a=3
-    b=4
+def objects(a):
+    # The variable a represents a list.
+    # You are given a = [1,2,[3,4,5]]
+    # The variable b also represents a list.
+    # The list b is a copy of list a.
+    # Both list a and list b should have the same id address.
+    
+    # Write the Python statement which will result in list b being a copy of list a, with list a and list b having the same id address.
+    # ENTER ANSWER BELOW.
+    b = a #Do this so you can get the same id address and list
 
-    # Add a and b then assign the sum to variable c
-    c = a + b
-    print(c)
+    # Assign a shallow copy of the list a to the variable c.
+    # (Variable c is a list and is a shallow copy of list a).
+    # ENTER ANSWER BELOW.
+    c = copy.copy(a)
 
-    # Subtract c by 1 then divide this result by 5.0 and assign this final result to the variable q
-    q = (c - 1)/5.0
-    print (q)
+    # Assign a deep copy of the list a to the variable d.
+    # ENTER ANSWER BELOW.
+    d = copy.deepcopy(a)
+    
 
+    # Assign the id of list a to the variable id_a
+    # ENTER ANSWER BELOW.
+    id_a = id(a)
 
-
-    # Assign the type of the variable q to a new variable type_q
-    type_q = type(q)
-    print (type_q)
-
-    return c,q,type_q
-
-
-def string_formating():
-
-    math_pi = 3.141592653589793
-
-    # Format the variable math_pi as a string with 6 decimal places and assign it to variable string_pi
-    math_pi = 3.141592653589793
-    string_pi = "{:.6f}".format(math_pi) #The f indicates that you're formatting a floating-point number. The .6 specifies the number of decimal places to display. 
-    #So :.6f means "format the number as a float with 6 digits after the decimal point."
-
-    print (string_pi)
-
-    ####
-    large_number= 100000000
-
-    # Format large_number to be a string and assign it to the variable comma_string. The contents of comma_string
-    # should have the appropriate commas. (Comma separator). Example; 1000 should be "1,000"
-    large_number = 100000000
-    comma_string = "{:,}".format(large_number) #This code is used to format the large number with commas; notes you need to indicate the {:,} for commas
-    print (comma_string)
-
-    # Format large_number to be a string and assign it to the variable exp_string. The contents of exp_string
-    # should be exponent notation (with two decimal places).
-    large_number = 100000000
-    exp_string = "{:.2e}".format(large_number) #This code does the exp_string operation, where it makes the number in exponentation notation like 1.00e+8. 
-    #{:.2e}: This is used to indicate that it should be two decimal places and e represents the exponentation notation. The colon inside the curly braces indicates that a format specification follows
-    print (exp_string)
-
-    ####
-    small_number =13
-
-    # Format small_number to be a string and assign it to the variable center_string. 
-    # The format for center_string should be Center aligned with a width of 10.
-    small_number = 13
-    center_string = "{: ^10}".format(small_number) #When you place ^ in the format specification, it tells Python to center-align the content within the specified width.
-    print (center_string) 
-
-    # Format small_number to be a string and assign it to the variable left_string.
-    # The format for left_string should be Left aligned with a width of 10.
-    left_string = "{: <10}".format(small_number)
-    print (left_string)
-
-    return string_pi,comma_string,exp_string,center_string,left_string
-
-
-def build_in():
-    #### Use the math library for the following questions.
-    # Assign the number pi to the variable math_pi
-    math_pi = math.pi
-    print(math_pi)
-
-    # Assign the Euler's number (e) to the variable math_e
-    math_e = math.e
-    print(math_e)
-
-    # Assign the sine of pi (sin(pi)) to the variable sin_pi
-    sin_pi = math.sin(math.pi)
-    print (sin_pi)
-
-    # Assign the square root of 2 to the variable square_root_2
-    square_root_2 = math.sqrt(2)
-    print (square_root_2)
-
-    # Assign the absolute value of -2 to the variable abs_2
-    # (Please use the built-in Python function for absolute value)
-    abs_2 = abs(-2)
-    print(abs_2)
-
-    return math_pi,math_e,sin_pi,square_root_2,abs_2
+    
+    return b, c, d, id_a
 
 
 
-def set_op():
-    S1 = {1, 2, 3, 4}
-    S2 = {3, 4, 5, 6}
 
-    # Add 0 to set S1
-    S1.add((0))
-    print (S1)
+# -----------------------------------------------------------------------------------------------------------------
+""" Write a function prime_number(number). 
+This function will return a list of all the prime numbers from 2 up to but not including the variable number.
+Please refer to the sample outputs given below.
 
-    # Assign the union of S1 and S2 to the variable union_s
-    union_s = S1 | S2
-    print (union_s)
+Example1:
+        prime_number(10)
+        Output:[2,3,5,7]
+Example2:
+        prime_number(100)
+        Output: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+Example3:
+        prime_number(7)
+        Output:[2,3,5]"""
 
-    # Assign the sum of all items in union_s to the variable sum_s
-    sum_s = sum((union_s))
-    print (sum_s)
+#PLEASE COMPLETE THE FOLLOWING PROGRAM.
 
-    return S1,union_s,sum_s
+def prime_number(number):
+        listP = []
+        for i in range(2, number):
+                prime_check = True
+                for j in range (2, i):
+                        if i % j == 0:
+                                prime_check = False
+                                break
+                if prime_check:
+                        listP.append(i)
+        return listP
 
+    
+# -----------------------------------------------------------------------------------------------------------------
+"""
+Write a function while_loop(number). The variable
+number is a string.
 
-calculate()
-string_formating()
-build_in()
-set_op()
+*If the character in the string is a number, the function
+returns the sum of all integer numbers between 1 and
+number inclusive. Please refer to the sample output
+below:
+Example1:
+        while_loop("3")
+        Output: 6
+        Explanation: 3 + 2 + 1 = 6
+
+*If the character in the string is not a number, (or not an integer
+number) the function returns the string "Error". Please refer to the
+sample output below:
+Example2:
+        while_loop("Hello")
+        Output: "Error"
+        Explanation: Characters in the string are not numbers.
+        Hint: You may want to consider using a try statement with an except statement.
+
+*If the character in the string is a number less than one, the function
+returns the number zero as a default. Please refer to the sample
+output below:
+Example3: 
+        while_loop("-1")
+        Output: 0
+        Explanation: The number in the string is less than one. The default of zero is returned. """
+#PLEASE COMPLETE THE FOLLOWING PROGRAM.
+
+def while_loop(num):
+        #Write your code here
+                total = 0
+                try:
+                        num = int(num) #To make the num to a number, you would do num = int(num)
+                        if num >= 1:
+                                while num > 0:
+                                        total = total + num
+                                        num = num -1
+                        elif num < 1:
+                                total = 0
+                except:
+                        return "Error"
+                return total
+
 ```
