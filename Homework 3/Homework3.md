@@ -1,7 +1,6 @@
 # <p align="center"><ins> Homework 3 </ins></p>
 ## **<ins> Code </ins>**
 ```{python}
-#I pledge my honor that I have abided by the Stevens Honors System. - Deep Shah
 import math
 
 def calculate():
@@ -93,8 +92,6 @@ def build_in():
     print(abs_2)
 
     return math_pi,math_e,sin_pi,square_root_2,abs_2
-
-
 
 def set_op():
     S1 = {1, 2, 3, 4}
