@@ -1,8 +1,8 @@
 # <p align="center"><ins> Homework 2 </ins></p>
 ## **<ins> Code </ins>**
+### This reviews tuples, basic operations, and function calls.
 ```{python}
 def tuple():
-    """This is to review tuples and basic operations."""
 
     # Assign the first element of the tuple "t1" to the variable x.
     t1 = (13, 100, 99, 100, 999)
@@ -40,7 +40,6 @@ def tuple():
 
 
     return x, y, z, f, m, n
-
 
 
 tuple()
