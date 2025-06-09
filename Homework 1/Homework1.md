@@ -1,12 +1,10 @@
 # <p align="center"><ins> Homework 1 </ins></p>
 ## **<ins> Code </ins>**
+### Python Core Object Types
+
+#### This is to review numbers and basic operations.
 ```{python}
-
-""" Python Core Object Types """
-
 def number():
-    """This is to review numbers and basic operations."""
-
     # Write the value 4 to the power of 5 and assign it to variable x.
     x = 4 ** 5
     print (x)
@@ -16,10 +14,10 @@ def number():
     print(y)
     
     return x, y
-
+```
+#### This is to review numbers and strings and basic operations.
+```{python}
 def strings():
-    """This is to review numbers and strings and basic operations."""
-    
     # Assign a string "stevens" to a variable stevens.
     stevens = "stevens"
 
@@ -40,10 +38,10 @@ def strings():
     print(good)
 
     return stevens, stevens_7, length, great, good
-
-
+```
+#### This is to review basic operations with lists.
+```{python}
 def list_1D():
-    """This is to review basic operations with lists."""
 
     s = " hoboken,is,awesome,i,like,it "
     
@@ -88,10 +86,10 @@ def list_2D():
     b = A[1][0]
     print(b)
     return A, last_column, a, b
-
-
+```
+#### This is to review basic operations with dictionaries.
+```{python}
 def dictionary():
-    """This is to review basic operations with dictionaries."""
     # Create a dictionary named fruit_dict that maps:
     #   "fruit" => "apple"
     #   "quantity" => 18
