@@ -2,7 +2,7 @@
 ## **<ins> Code </ins>**
 ### Python Core Object Types
 
-#### This is to review numbers and basic operations.
+#### This reviews numbers and basic operations.
 ```{python}
 def number():
     # Write the value 4 to the power of 5 and assign it to variable x.
@@ -15,7 +15,7 @@ def number():
     
     return x, y
 ```
-#### This is to review numbers and strings and basic operations.
+#### This reviews numbers, strings, and basic operations.
 ```{python}
 def strings():
     # Assign a string "stevens" to a variable stevens.
@@ -39,7 +39,7 @@ def strings():
 
     return stevens, stevens_7, length, great, good
 ```
-#### This is to review basic operations with lists.
+#### This reviews basic operations with lists.
 ```{python}
 def list_1D():
 
@@ -87,7 +87,7 @@ def list_2D():
     print(b)
     return A, last_column, a, b
 ```
-#### This is to review basic operations with dictionaries.
+#### This reviews basic operations with dictionaries and function calls.
 ```{python}
 def dictionary():
     # Create a dictionary named fruit_dict that maps:
