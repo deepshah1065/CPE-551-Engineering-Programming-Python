@@ -63,28 +63,32 @@ def prime_number(number):
 ### If the character in the string is a number, the function returns the sum of all integer numbers between 1 and number inclusive. 
 ### Please refer to the sample output below:
 ### Example 1:
-        while_loop("3")
-        Output: 6
-        Explanation: 3 + 2 + 1 = 6
+```{python}
+while_loop("3")
+```
+### Output: 6 
+### Explanation: 3 + 2 + 1 = 6
 
-*If the character in the string is not a number, (or not an integer
-number) the function returns the string "Error". Please refer to the
-sample output below:
-Example2:
-        while_loop("Hello")
-        Output: "Error"
-        Explanation: Characters in the string are not numbers.
-        Hint: You may want to consider using a try statement with an except statement.
+### If the character in the string is not a number, (or not an integer number) the function returns the string "Error". 
+### Please refer to the sample output below:
+### Example 2:
+```{python}
+while_loop("Hello")
+```
+### Output: "Error"
+### Explanation: Characters in the string are not numbers.
+### Hint: You may want to consider using a try statement with an except statement.
 
-*If the character in the string is a number less than one, the function
-returns the number zero as a default. Please refer to the sample
-output below:
-Example3: 
-        while_loop("-1")
-        Output: 0
-        Explanation: The number in the string is less than one. The default of zero is returned. """
-#PLEASE COMPLETE THE FOLLOWING PROGRAM.
-
+### If the character in the string is a number less than one, the function returns the number zero as a default. 
+### Please refer to the sample output below:
+### Example 3: 
+```{python}
+while_loop("-1")
+```
+### Output: 0
+### Explanation: The number in the string is less than one. The default of zero is returned.
+### Code
+```{python}
 def while_loop(num):
         #Write your code here
                 total = 0
