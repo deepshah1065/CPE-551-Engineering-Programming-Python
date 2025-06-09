@@ -1,6 +1,6 @@
 # <p align="center"><ins> Homework 4 </ins></p>
-## **<ins> Code </ins>**
-
+## Question 1
+###  Code 
 ```{python}
 import copy
 def objects(a):
@@ -25,23 +25,21 @@ def objects(a):
 
     return b, c, d, id_a
 ```
+## Question 2
+### Write a function prime_number(number). This function will return a list of all the prime numbers from 2 up to but not including the variable number.
+### Please refer to the sample outputs given below.
+### Example 1:
+### prime_number(10)
+### Output: [2,3,5,7]
+### Example 2:
+### prime_number(100)
+### Output: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+### Example 3:
+### prime_number(7)
+### Output: [2,3,5]
 
-""" Write a function prime_number(number). 
-This function will return a list of all the prime numbers from 2 up to but not including the variable number.
-Please refer to the sample outputs given below.
-
-Example1:
-        prime_number(10)
-        Output:[2,3,5,7]
-Example2:
-        prime_number(100)
-        Output: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
-Example3:
-        prime_number(7)
-        Output:[2,3,5]"""
-
-#PLEASE COMPLETE THE FOLLOWING PROGRAM.
-
+### Code
+```{python}
 def prime_number(number):
         listP = []
         for i in range(2, number):
@@ -53,12 +51,9 @@ def prime_number(number):
                 if prime_check:
                         listP.append(i)
         return listP
+```
 
-    
-# -----------------------------------------------------------------------------------------------------------------
-"""
-Write a function while_loop(number). The variable
-number is a string.
+### Write a function while_loop(number). The variable number is a string.
 
 *If the character in the string is a number, the function
 returns the sum of all integer numbers between 1 and
