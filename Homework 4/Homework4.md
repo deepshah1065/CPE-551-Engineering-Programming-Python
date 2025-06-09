@@ -1,8 +1,8 @@
 # <p align="center"><ins> Homework 4 </ins></p>
 ## **<ins> Code </ins>**
+
 ```{python}
 import copy
-
 def objects(a):
     # The variable a represents a list.
     # You are given a = [1,2,[3,4,5]]
@@ -11,30 +11,21 @@ def objects(a):
     # Both list a and list b should have the same id address.
     
     # Write the Python statement which will result in list b being a copy of list a, with list a and list b having the same id address.
-    # ENTER ANSWER BELOW.
     b = a #Do this so you can get the same id address and list
 
     # Assign a shallow copy of the list a to the variable c.
     # (Variable c is a list and is a shallow copy of list a).
-    # ENTER ANSWER BELOW.
     c = copy.copy(a)
 
     # Assign a deep copy of the list a to the variable d.
-    # ENTER ANSWER BELOW.
     d = copy.deepcopy(a)
-    
 
     # Assign the id of list a to the variable id_a
-    # ENTER ANSWER BELOW.
     id_a = id(a)
 
-    
     return b, c, d, id_a
+```
 
-
-
-
-# -----------------------------------------------------------------------------------------------------------------
 """ Write a function prime_number(number). 
 This function will return a list of all the prime numbers from 2 up to but not including the variable number.
 Please refer to the sample outputs given below.
